@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Age</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center class="no-scroll" padding>
+  <h3 class="top" text-center>Dans quelle tranche d’âge vous situez-vous ?</h3>
+  <ion-grid id="age_list">
+    <ion-row>
+      <ion-col col-6 tappable *ngFor="let age of ages;let x = index" (click)="saveAge(age['value'])">
+        <p class="btn_age" [ngClass]="{'active' : (age.value == ageSelect)}" [class.active]="age.activeAge">{{ age.text }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <p tappable id="search" class="btn_action" (click)="saveUserAge()">Sauvegarder</p>
+</ion-content>

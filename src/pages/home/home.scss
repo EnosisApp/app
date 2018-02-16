@@ -1,0 +1,400 @@
+page-home {
+  #map {
+      width: 100%;
+      height: 100%;
+  }
+  .leaflet-container a {
+    color: #333;
+  }
+
+  #backConnexion {
+    display: none;
+    height: 100%;
+    width: 100%;
+  }
+
+  .showErrorConnexion {
+    display: inline-block !important;
+  }
+
+  .hideMap {
+    display: none !important;
+  }
+
+  .shadowContent {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    z-index: -999;
+    position: absolute;
+    opacity: 0;
+    transition: 0.41s ease;
+  }
+  .scroll-content {
+    overflow-y: hidden;
+  }
+
+  #accessIcon svg {
+    position: relative;
+    width: 30px;
+    top: 10px;
+  }
+
+  .activeAccess {
+    background-color: #4EC4DA;
+    transition: 0.3s all;
+    svg ellipse, svg path {
+      stroke: #FFF;
+    }
+  }
+
+  #btn-options {
+    box-shadow: 0px 0px 45px 5px rgba(0,0,0,0.16);
+    font-size: 1.5em;
+  }
+  #icon-plus {
+    font-size: 2em !important;
+    color: #9c9c9c;
+  }
+  // Button active
+  .fab-ios-light {
+    color: #333;
+
+  .fab-close-active .button-inner {
+      transform: rotateZ(45deg) !important;
+  }
+
+  }
+  ion-fab-list {
+    button {
+      box-shadow: 0px 0px 45px 5px rgba(0,0,0,0.16);
+    }
+  }
+
+  // Résultats
+  #modalResults {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    background-color: #FFF;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
+    border-radius: 8px;
+    padding: 4px 18px;
+
+    font-size: 20px;
+    color: #616060;
+    span {
+      position: relative;
+      top: -4px;
+    }
+    ion-icon {
+      margin-right: 7px;
+      font-size: 1.7em;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  // Modal de filtre
+  .contentModal {
+    top: 7% !important;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1005;
+    text-align: center;
+  }
+  #bleModal {
+    top: 28% !important;
+  }
+  .hr {
+    border-bottom: 2px solid #ccc;
+    width: 20%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .active svg g path, .active svg path, .active svg rect {
+    fill: #FFF;
+    stroke: #FFF;
+    transition: 0.3s all;
+  }
+  .active ellipse {
+    stroke: #4EC4DA;
+    fill: #4EC4DA;
+    transition: 0.3s all;
+  }
+  #modalFilter {
+    width: 90%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+    background: #FFF;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.22);
+    border-radius: 20px;
+    #closeModal {
+      position: absolute;
+      width: 35px;
+      top: 25px;
+      right: 8.5%;
+      height: 40px;
+    }
+    // #closeModal svg:hover circle {
+    //   fill: #EFEFEF;
+    //   transition: 0.3s all;
+    // }
+    a {
+      color: #333 !important;
+    }
+    h3 {
+      position: relative;
+      top: 10px;
+      margin-bottom: 20px;
+    }
+    span {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #8e8e8e;
+    }
+    a {
+      width: 25%;
+      display: inline-block;
+      p {
+        font-size: 0.8em;
+      }
+    }
+    svg {
+      width: 80%;
+      height: 80%;
+    }
+    p {
+      display: block;
+      margin-top: 0 !important;
+      color: #6d6c6c;
+    }
+    .light {
+      color: #4EC4DA;
+    }
+  }
+
+  .modalOn {
+    display: inline !important;
+    -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 250ms;
+    transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 250ms;
+  }
+  .shadow {
+    opacity: 0.4;
+    z-index: 1000;
+  }
+
+
+  ////// TEST
+  .modalPoiFull {
+    height: 89% !important;
+    transition: 0.3s height;
+  }
+  .contentPoiFull {
+    top: 9% !important;
+    transition: 0.3s top;
+  }
+
+  // Modal POI
+  #poiContent {
+    top: 32%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99999;
+    text-align: center;
+    #poiModal {
+      width: 95%;
+      height: 66%;
+      background-color: #FFF;
+      margin: 0 auto;
+
+      color: #333;
+      font-size: 16px;
+      line-height: 24px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px rgba(109, 109, 109, 0.3) !important;
+      padding: 15px 20px 0px 20px;
+      font-family: 'GlacialIndifference-Regular';
+      // hr#moove_modal {
+      //   /* Rectangle 14: */
+      //   background: rgba(216,216,216,0.59);
+      //   border-radius: 8px;
+      //   height: 6px;
+      //   width: 23%;
+      //   position: relative;
+      //   top: -8px;
+      // }
+      #info_poi {
+        text-align: left;
+        display: table;
+        p {
+          display: inline;
+        }
+        img {
+          left: 4%;
+          width: 120px;
+          vertical-align: middle;
+          display: table-cell;
+        }
+        #title {
+          color: #606060;
+          font-size: 1em;
+          width: 65%;
+          top: -2px;
+          vertical-align: middle;
+          display: table-cell;
+          position: relative;
+          left: 10px;
+          @media screen and (min-width: 321px) {
+            font-size: 1.3em;
+            top: 2px;
+          }
+        }
+        #goTo {
+          vertical-align: middle;
+          display:table-cell;
+        }
+        #goTo:hover path {
+          fill: #afe4ee;
+          transition: 0.3s fill;
+        }
+      }
+
+      hr {
+        /* drag_slide: */
+        background: #EBEAEA;
+        border-radius: 2px 2px 2px 0 2px;
+        height: 1.5px;
+      }
+
+      .dataIsPresent {
+        display: inline !important;
+      }
+
+      .dataIsNotPresent {
+        display: none;
+      }
+
+      #noData {
+        display: none;
+        position: relative;
+        top: 70px;
+        color: #b9b9b9;
+      }
+
+      #poi_infos {
+        text-align: left;
+        margin-top: 5%;
+        #here_talk {
+          color: #9C9A9A;
+        }
+        #here_lang {
+          display: block;
+          color: #9C9A9A;
+        }
+        span#ageTxt {
+          color: #4EC4DA;
+          font-weight: bold;
+          font-size: 1.3em;
+          vertical-align: middle;
+          margin-left: 20%;
+        }
+        #passions, #langues {
+          margin-top: 5%;
+          .cloud {
+            margin-top: 5%;
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            .pois_user {
+              display: inline-block;
+              padding: 2px 7px;
+              margin: 3px 5px;
+              border-radius: 1px solid #4EC4DA;
+              border-radius: 10px;
+              background-color: #4EC4DA;
+              color: #FFF;
+              font-size: 1.2em;
+              @media screen and (min-width: 360px) {
+                font-size: 1.6em;
+                margin: 5px 10px;
+                padding: 9px 8px;
+                border-radius: 15px;
+              }
+            }
+          }
+        }
+    }
+    #filters_poi {
+      display: none;
+      position: relative;
+      top: 31%;
+      @media screen and (min-width: 360px) {
+        top: 38%;
+      }
+      a {
+        display: inline-block;
+        width: 25%;
+        svg {
+          width: 79%;
+          height: 50%;
+        }
+        p {
+          display: block;
+          margin-top: 0 !important;
+          color: #6d6c6c;
+          font-size: 12px;
+        }
+      }
+    }
+    // Si modalfull on affiche les filtres
+    .filtersPoiFull {
+      display: block !important;
+    }
+  }
+
+  // Options buttons
+  ion-fab {
+    transform: scale(1.2);
+    left: 5% !important;
+    bottom: 3% !important;
+  }
+  ion-fab-list {
+    margin-bottom: 60px;
+  }
+  .fab-in-list {
+    margin: 4px 0;
+  }
+}
+
+  /////// LOGO BLUETOOTH ////////
+  .bluetoothActive {
+    display: none !important;
+  }
+  // Modal Ble
+  .modalBleOn {
+    // display: inline !important;
+    -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 250ms;
+    transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 250ms;
+  }
+  #bleIcon {
+    display: inline-block;
+  }
+
+  .leaflet-marker-icon {
+    width: 50px !important;
+  }
+  .leaflet-control-container {
+    display: none;
+  }
+}

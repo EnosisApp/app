@@ -1,0 +1,87 @@
+page-poi {
+
+  //SVG styles activated
+  .active svg circle {
+    opacity: 1;
+    transition: 0.4s opacity;
+  }
+  .active svg path {
+    fill: #4EC4DA;
+    stroke: #4EC4DA;
+    transition: 0.4s all;
+  }
+  p {
+    text-align: center;
+    color: #FFF !important;
+    font-size: 1.8em;
+  }
+
+  ion-grid {
+    span {
+      text-align: center;
+      display: block;
+      color: #FFF;
+      font-size: 0.95em;
+    }
+    ion-col {
+      margin-bottom: 20px !important;
+      text-align: center;
+      svg {
+        width: 95%;
+        height: 95%;
+      }
+    }
+  }
+
+  ion-content {
+    button {
+      border: 1px solid #FFF;
+      border-radius: 30px;
+      background-color: transparent;
+      color: #FFF;
+      font-size: 1.2em;
+      padding: 10px 0px 12px 0px;
+      margin: 0 auto;
+      text-align: center;
+      display: block;
+      width: 60%;
+    }
+    a {
+      color: #FFF;
+      text-decoration: underline;
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+    }
+    div p {
+      color: #333;
+    }
+    #search {
+      margin: 0 auto;
+      width: 50%;
+      padding: 3px 5px;
+      border-color: #FFF;
+      color: #FFF !important;
+      margin-top: 10px;
+
+      animation: bounce 4s infinite;
+    }
+    #search:hover {
+      border-color: #FFF;
+      color: #4EC4DA !important;
+      background-color: #FFF;
+    }
+    @keyframes bounce {
+      0% { transform: scale(1) }
+      10% { transform: scale(1.2) }
+      30% { transform: scale(1) }
+      100% { transform: scale(1) }
+    }
+  }
+
+  // Background for poi
+  .scroll-content {
+    padding-bottom: 30px;
+    background-image: linear-gradient(-179deg, #4EC4DA 0%, #4EACD8 100%);
+  }
+}

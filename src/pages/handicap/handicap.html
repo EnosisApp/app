@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Handicap</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p>Activez ce bouton si vous êtes une personne à mobilité réduite.
+  Nous le prendrons en compte dans notre création des profils de lieux.</p>
+  <ion-item>
+    <ion-label>Handicap</ion-label>
+    <ion-toggle tappable [(ngModel)]="handicapSelect" (ionChange)="actionHandicap()"></ion-toggle>
+  </ion-item>
+  <p>Les prochaines versions d'Enosis vous permettrons clairement d'indiquer votre niveau d'handicap.</p>
+  <p tappable class="btn_action profilInit" (click)="saveUserHandicap()">Sauvegarder</p>
+</ion-content>

@@ -1,0 +1,124 @@
+page-categ-poi {
+
+
+  h3.top {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .row {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  // CONTENT
+  .scroll-content {
+    background-color: #F4F4F4;
+  }
+
+  #btnSavePoi {
+    width: 100%;
+    margin: 0 auto;
+    span {
+      font-size: 1.3em;
+    }
+  }
+
+  .active {
+    background-image: linear-gradient(100deg, #4EC4DA 0%, #4EACD8 100%) !important;
+    box-shadow: none !important;
+    span {
+      color: #FFF !important;
+    }
+    svg path, svg g, svg polygon, svg rect {
+      fill: #FFF;
+      stroke: #FFF;
+    }
+  }
+
+  .content_categ {
+    text-align: center;
+    background-color: #FFF;
+    border-color: #F4F4F4;
+    margin: 5px;
+    box-shadow: 0 5px 20px 0 rgba(189, 189, 189, 0.5);
+    border-radius: 8px;
+    padding: 20% 1% 20% 1%;
+    @media screen and (min-width: 360px) {
+      padding: 35% 1% 35% 1%;
+    }
+    .content_categ:hover {
+      box-shadow: none;
+      transition: 0.4s all ease;
+    }
+    span {
+      display: block;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    svg {
+      width: 75px;
+      height: 80px;
+    }
+  }
+
+  // Progress bar
+  .progress-outer {
+      width: 96%;
+      margin: 10px 2%;
+      // padding: 3px;
+      text-align: center;
+      background-color: #FFF;
+      // border: 1px solid #dcdcdc;
+      color: #fff;
+      border-radius: 20px;
+  }
+
+  .progress-inner {
+      min-width: 15%;
+      white-space: nowrap;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0px 0px 30px -5px rgba(70,196,219,1);
+      background-color: map-get($colors, primary);
+  }
+  #info_icon {
+    position: absolute;
+    left: 34% !important;
+    top: 45%;
+    margin: 0 auto;
+    text-align: center;
+    width: 33%;
+    display: none;
+    @media screen and (min-width: 360px) {
+      top: 40%;
+    }
+  }
+  // Buttons
+  p#choice_icon {
+    padding: 5px 10px 5px 10px;
+    border: 0.5px solid #4EC4DA;
+    background-color: #FFF;
+    color: #4EC4DA;
+    border-radius: 20px;
+    font-size: 1.1em;
+  }
+
+  .show {
+    display: inline-block !important;
+  }
+
+  #block_save {
+    margin-bottom: 30px;
+  }
+  span#info_poi {
+    font-size: 11px;
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #606060;
+    opacity: 0.5;
+    margin-top: -5px;
+    margin-bottom: 5px;
+  }
+}

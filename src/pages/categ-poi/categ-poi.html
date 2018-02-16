@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Catégories</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="top" text-center>Quels sont vos centres d'intérêts ?</h3>
+  <ion-grid>
+    <ion-row>
+      <ion-col tappable (click)="itemTapped(icon)"tappable *ngFor="let icon of icons" col-6>
+        <div class="content_categ" [ngClass]="{'active' : (icon.activeCateg == true)}">
+          <a [ngClass]="icon['iconName']">
+            <svg-icon [src]="'./assets/img/logo_'+icon['iconName']+'.svg'"></svg-icon>
+            <span>{{icon.title}}</span>
+          </a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <div id="info_icon" [ngClass]="{'show' : (info_icon == true)}" >
+    <p tappable id="choice_icon" >{{ icon_title }}</p>
+  </div> -->
+  <div id="block_save">
+    <!-- <div class="progress-outer">
+        <div class="progress-inner" [style.width]="progress + '%'">
+            {{progress}}%
+        </div>
+    </div> -->
+    <p tappable id="search" class="btn_action" (click)="savePoi()">Sauvegarder</p>
+    <span id="info_poi">Vous pouvez revenir à n'importe quel moment compléter votre profil.</span>
+  </div>
+</ion-content>

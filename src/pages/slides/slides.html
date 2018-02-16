@@ -1,0 +1,72 @@
+<ion-content padding>
+  <p tappable class="slip_btn" (click)="goToHome()">Passer</p>
+  <ion-slides pager (ionSlideDrag)="slideMoved()">
+    <!-- <ion-slide id="introHelp" [class.active]="slidesNav" >
+      <div [@bounce]='state'>
+        <h2>Vous n'avez pas bien compris le principe d'Enosis ?<br>On vous ré-explique tout ici !</h2>
+        <p (click)="nextSlide()">Commencer</p>
+      </div>
+    </ion-slide> -->
+    <ion-slide>
+      <img class="slides" [@bounce]='state' src="./assets/img/slide1.png" alt="">
+      <div [@bounce]='state'>
+        <h2>Bienvenue sur Enosis !</h2>
+        <p>Trouvez des lieux où les personnes qui y sont présentes possèdent les mêmes centres d’intérêts que vous.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <img class="slides" [@bounce]='state' src="./assets/img/slide2.png" alt="">
+      <div [@bounce]='state'>
+        <h2>Profil de lieu</h2>
+        <p>Enosis crée automatiquement un profil des lieux qu'il référence. Ce profil correspond aux centre d'intérêts des personnes qui le fréquentent.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <img [@bounce]='state' src="./assets/img/slide3.png" alt="">
+      <div [@bounce]='state'>
+        <h2>Communauté</h2>
+        <p>Chaque utilisateur d’Enosis déclare ses centres d'intérets et participe à la construction des profils des lieux qu'il fréquente.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <img [@bounce]='state' src="./assets/img/slide4.png" alt="">
+      <div [@bounce]='state'>
+        <h2>Bluetooth</h2>
+        <p>La construction automatique des profils de lieux ne peut se faire sans votre contribution. En laissant votre bluetooth allumé vous nous permettez de maintenir un service de qualité.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <img [@bounce]='state' src="./assets/img/slide5.png" alt="">
+      <div [@bounce]='state'>
+        <h2>Batterie</h2>
+        <p>Enosis a été optimisée pour économiser la batterie de votre smartphone.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <img [@bounce]='state' src="./assets/img/slide6.png" alt="">
+      <div [@bounce]='state'>
+        <h2>Anonymat</h2>
+        <p>Enosis respecte la vie privée de ses utilisateurs. Aucune donnée personnelle n'est stockée sur nos serveurs ni revendue à des tiers.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide [@bounce]='state'>
+      <ion-row>
+        <ion-col>
+          Vous êtes prêt ?
+        </ion-col>
+      </ion-row>
+      <ion-row class="shadow" [ngClass]="{'active' : ( slidesNav == false)}">
+        <ion-col>
+          <p id="profilWrite" class="btn_action" (click)="goToProfil()">Saisir son profil</p>
+          <span class="delay">3mn max</span>
+          <button id="discover_btn" ion-button clear (click)="goToHome()">Découvrir EnosisApp</button>
+        </ion-col>
+      </ion-row>
+      <p id="goHome" [ngClass]="{'shadow' : ( slidesNav == false)}" class="btn_action" (click)="goToHome()">J'ai compris !</p>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

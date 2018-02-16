@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <svg-icon tappable src="./assets/icon/menu.svg"></svg-icon>
+    </button>
+    <ion-title>Enosis</ion-title>
+    <ion-buttons id="bleIcon" (click)="modalBleActive()" [ngClass]="{'bluetoothActive' : (bluetoothActive == false)}" [class.bluetoothActive]="bluetoothActive" end>
+      <button ion-button icon-only>
+        <svg-icon tappable src="./assets/icon/ble.svg"></svg-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- Map -->
+  <div style="height: 100%; width: 100%" id="map" [ngClass]="{'hideMap' : (showErrorConnexion == true)}">
+    <div tappable (click)="modalActive()" [ngClass]="{'shadow' : ( stateFilter == 'bounce-in')}" class="shadowContent"></div>
+    <!-- Options -->
+    <ion-fab left bottom #fab>
+      <button tappable id="btn-options" ion-fab color="light"><ion-icon id="icon-plus" name="ios-arrow-up"></ion-icon></button>
+      <ion-fab-list side="top">
+        <button (click)="modalActive(fab)" ion-fab><ion-icon ios="ios-options-outline" md="md-options"></ion-icon></button>
+        <button [ngClass]="{'activeAccess' : (accessiblePoi == true)}" (click)="accessibleFilter()" ion-fab>
+        <svg-icon id="accessIcon" [src]="'./assets/img/access.svg'"></svg-icon>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+    <!-- Modal results filters -->
+    <div [ngClass]="{'modalOn' : ( modalResults == true)}" id="modalResults">
+      <a tappable>
+        <ion-icon tappable (click)="removeFilters()" name="close"></ion-icon>
+      </a><span tappable (click)="modalActive()"> {{ nbrResults }} résultats</span>
+    </div>
+  </div>
+
+  <!--  Connexion closed -->
+  <!-- <div id="backConnexion" [ngClass]="{'showErrorConnexion' : (showErrorConnexion == true)}">
+    <h1>ERROR CONNEXION</h1>
+  </div> -->
+
+  <!-- Modal informations about POI -->
+  <div [ngClass]="{'contentPoiFull' : ( stateModalFull == true)}" [@animPoi]='statePoi' id="poiContent">
+    <div [ngClass]="{'modalPoiFull' : ( stateModalFull == true)}" id="poiModal">
+      <div id="info_poi">
+        <img [src]="getImg(poi[0]['type'])" alt="">
+        <span id="title">{{ poi[0]['caption'] }}</span>
+        <svg-icon tappable id="goTo" (click)="goToDestination(poi[0]['address'])" [src]="'./assets/icon/goTo.svg'"></svg-icon>
+      </div>
+      <hr>
+      <div [ngClass]="{'dataIsNotPresent' : ( noDataPoi == true)}" id="poi_infos">
+        <div id="age">
+          <span  id="here_talk">Age moyen :</span>
+          <span id="ageTxt">{{ currentAge }}</span>
+        </div>
+        <div id="langues">
+          <span  id="here_lang">Les langues les plus parlées :</span>
+          <div class="cloud"><p class="pois_user" *ngFor="let lang of currentLang">{{ lang }}</p></div>
+        </div>
+        <div id="passions">
+          <span id="here_talk">Ici on parle de :</span>
+          <div class="cloud"><p class="pois_user" *ngFor="let data of currentPois">{{ data }}</p></div>
+        </div>
+      </div>
+      <div [ngClass]="{'dataIsPresent' : ( noDataPoi == true)}" id="noData">
+        <span>Nous sommes désolés, aucune information n'est disponible sur ce lieu pour le moment.</span>
+      </div>
+      <div id="filters_poi" [ngClass]="{'filtersPoiFull' : ( stateModalFull == true)}">
+        <a *ngFor="let categ of categModal;let x = index">
+          <svg-icon [src]="'./assets/categ/modal/filter_'+categ['categName']+'.svg'"></svg-icon>
+          <!-- <p>{{ categ.title }}</p> -->
+        </a>
+      </div>
+      <!--  -->
+    </div>
+  </div>
+  <!-- Modal filters -->
+  <div [ngClass]="{'modalOn' : ( filterModal == true)}" [@animFilter]='stateFilter' class="contentModal">
+    <div id="modalFilter">
+      <h3>Vous cherchez...</h3>
+      <div class="hr"> </div>
+      <svg-icon tappable id="closeModal" (click)="closeModal()" [src]="'./assets/img/close.svg'"></svg-icon>
+      <span [ngClass]="{'light' : ( filterChoice == true)}">{{ nbrResults }} résultats</span>
+      <a *ngFor="let filter of filters;let x = index" [ngClass]="filter['filterName']" (click)="filterAction(filter['filterName'], x)">
+        <svg-icon [class.active]="filter.activeFilter" [src]="'./assets/markers/filters/filters_'+filter['filterName']+'.svg'"></svg-icon>
+        <p>{{ filter.title }}</p>
+      </a>
+      <p tappable id="search" class="btn_action" (click)="filterActive()">Rechercher</p>
+    </div>
+  </div>
+  <!-- Modal Bluetooth -->
+  <div [ngClass]="{'modalBleOn' : ( bleModal == true)}" [@animBle]='stateModalBle' class="contentModal" id="bleModal">
+    <div id="modalFilter">
+      <h3>Avertissement</h3>
+      <div class="hr"> </div>
+      <p>Pour une meilleure expérience d'Enosis nous vous conseillons d'activer votre Bluetooth.</p>
+      <p tappable id="search" class="btn_action" (click)="bleCloseModal()">J'ai compris</p>
+    </div>
+  </div>
+</ion-content>

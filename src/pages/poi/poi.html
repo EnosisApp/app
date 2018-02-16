@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{categPoiTxt}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <p>"{{ categIntroTxt }}"</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor="let poi of userData;let x = index">
+        <svg-icon tappable (click)="actionPoi(poi['icon'], x, $event)" [src]='"./assets/categ/"+categPoi+"/icon_sc_"+poi.icon+".svg"' [ngClass]="{'active' : (poi.activePoi == true)}" [class.active]="poi.activePoi"></svg-icon>
+        <span>{{ poi.title }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p tappable id="search" class="btn_action" (click)="save()">Sauvegarder</p>
+</ion-content>

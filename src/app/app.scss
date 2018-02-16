@@ -1,0 +1,111 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@font-face {
+  font-family: 'GlacialIndifference-Regular';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../assets/fonts/GlacialIndifference-Regular.otf');
+  // src: url('../assets/fonts/agnextregular-webfont.eot?#iefix') format('embedded-opentype'),
+  //      local('Akzidenz-Grotesk Next'),
+  //      local('Akzidenz-Grotesk Next'),
+  //      url('../assets/fonts/agnextregular-webfont.woff') format('woff')
+}
+
+// HEADER
+.bar-button-menutoggle-ios, .bar-button-menutoggle-md {
+  margin-left: 0px;
+}
+
+// BOUTONS ACTIONS
+.btn_action {
+  color: #4EC4DA !important;
+  background-color: transparent;
+  font-family: 'Avenir';
+  font-weight: 500;
+  font-size: 1.3em;
+  border: 2px solid;
+  border-color: #4EC4DA;
+  border-radius: 30px;
+}
+.profilInit {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3px 5px;
+}
+.profilInit:hover {
+  border-color: #FFF;
+  color: #4EC4DA !important;
+  background-color: #FFF;
+}
+
+.btn_action:hover {
+  transition: 0.3s all;
+  color: #FFF !important;
+  background-color: #4EC4DA;
+  border-color: #7bbdca;
+}
+p#search {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  padding: 3px 5px;
+  margin-top: 15px !important;
+  margin-bottom: 20px;
+}
+
+// Top of profil configaration
+h3.top {
+  position: relative;
+  display: block;
+  margin-top: 10% !important;
+}
+
+ion-menu {
+  ion-content {
+    ion-label {
+      margin: 9px 8px 9px 0px !important;
+      }
+      svg {
+        height: 50px;
+      }
+      svg-icon {
+        vertical-align: middle;
+      }
+      ion-list p {
+        display: inline;
+        font-size: 20px !important;
+        color: #333 !important;
+      }
+      button {
+        border: none !important;
+      }
+      #info_nav {
+        margin-left: 16px;
+      }
+    }
+}
+
+#nav_list {
+  margin-top: 10%;
+}
+
+// Remove border bottom list
+.list-ios .item-block .item-inner {
+  border: none;
+}
